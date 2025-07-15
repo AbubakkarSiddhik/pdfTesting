@@ -1,30 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>View Local PDF</title>
+  <title>PDF Viewer</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-    }
-    iframe {
-      width: 50%;
-      height: 50vh;
-      border: none;
+      height: 50%;
     }
   </style>
 </head>
 <body>
 
-  <iframe id="pdfViewer"></iframe>
-
-  <script>
-    // Path to your local PDF
-    const pdfUrl = "dummy.pdf#toolbar=0"; 
-    document.getElementById("pdfViewer").src = pdfUrl;
-  </script>
+<script>
+  const frame = document.createElement('iframe');
+  frame.src = "dummy.pdf#toolbar=0";
+  frame.style = "width:100%; height:100%; border:none;";
+  document.body.appendChild(frame);
+</script>
 
 </body>
 </html>
