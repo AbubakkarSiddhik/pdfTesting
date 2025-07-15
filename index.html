@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>View PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>View Local PDF</title>
   <style>
-    .pdf-viewer {
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    iframe {
       width: 50%;
       height: 50vh;
       border: none;
@@ -14,11 +18,13 @@
 </head>
 <body>
 
-<object 
-  data="dummy.pdf" 
-  type="application/pdf">
+  <iframe id="pdfViewer"></iframe>
 
-</object>
+  <script>
+    // Path to your local PDF
+    const pdfUrl = "dummy.pdf#toolbar=0"; 
+    document.getElementById("pdfViewer").src = pdfUrl;
+  </script>
 
 </body>
 </html>
