@@ -5,7 +5,7 @@
   <title>PDF Viewer on Canvas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <!-- PDF.js CDN -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   
   <style>
@@ -31,19 +31,26 @@
       border-radius: 8px;
     }
   </style>
+
+
+
+
+
+
 </head>
 <body>
 
   <div id="pdf-container"></div>
-
+   
+   
   <script>
-    const url = "dummy.pdf"; // Place your local PDF in the same folder
+    const url = "sample.pdf"; 
     const container = document.getElementById("pdf-container");
 
     pdfjsLib.getDocument(url).promise.then(pdf => {
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
         pdf.getPage(pageNum).then(page => {
-          // Responsive scale based on screen width
+         
           const scale = window.innerWidth < 768 ? 1 : 1.5;
           const viewport = page.getViewport({ scale });
 
