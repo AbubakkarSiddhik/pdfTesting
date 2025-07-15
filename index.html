@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PDF Viewer</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 50%;
-    }
-  </style>
+  <title>PDF via Frameset</title>
 </head>
-<body>
 
-<script>
-  const frame = document.createElement('iframe');
-  frame.src = "dummy.pdf#toolbar=0";
-  frame.style = "width:100%; height:100%; border:none;";
-  document.body.appendChild(frame);
-</script>
+<frameset rows="100%">
+  <frame src="sample.pdf#toolbar=0" />
+</frameset>
 
-</body>
 </html>
